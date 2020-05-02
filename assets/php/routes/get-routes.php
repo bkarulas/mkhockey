@@ -26,13 +26,17 @@ switch ($api) {
         $player = $_GET['player'];
         getPlayerInfo($conn,$info, $year, $player);
     break;
+    case 'teamname':
+        $team = $_GET['team'];
+        getTeamName($conn,$info, $year, $team);
+    break;
     default:
         echo "Error API";
 }
 
 //STATS - TEAM STANDINGS
 function getTeamsInfo($conn,$info, $year){
-    $query = "select * from summer_".$year."_team order by points desc, pm desc, gf desc, win desc, id";
+    $query = "SELECT * FROM summer_".$year."_team ORDER BY points desc, pm desc, gf desc, win desc, id";
     $result = mysqli_query($conn, $query);
 
     while ($row = $result->fetch_assoc()) {
@@ -141,6 +145,20 @@ function getPlayerInfo($conn,$info, $year, $player){
                 "goals"=>$row['goals'],
                 "assists"=>$row['assists'],
                 "points"=>$row['points']
+            ));
+    }
+    echo json_encode($info);
+    CloseCon($conn);
+}
+
+function getTeamName($conn,$info, $year, $team){
+    $query = "SELECT * FROM summer_".$year."_team WHERE id=".$team;
+    $result = mysqli_query($conn, $query);
+
+    while ($row = $result->fetch_assoc()) {
+        array_push($info,
+            array(
+                "name"=>$row['name'],
             ));
     }
     echo json_encode($info);

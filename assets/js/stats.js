@@ -1,16 +1,3 @@
-let geturl = './assets/php/routes/get-routes.php?api=';
-
-//TEMP YEAR FOR TESTING
-let year = 19;
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Ready', year);
-    getTeamsInfo(year);
-    getGoaliesInfo(year);
-    getPlayersInfo(year);
-  });
-
-
 //GET TEAM INFO
 function getTeamsInfo(year){
     phpurl = geturl+"teams&year="+year;
@@ -21,7 +8,6 @@ function getTeamsInfo(year){
   };
 
 function printTeamStandings(teams){
-    console.log(teams);
     teams.forEach(team => {
         $('#statTeam').attr('class', 'row stat-info')
         .append($('<div>').attr('class','col-4 bold left').text(team.name)
@@ -45,7 +31,6 @@ function getGoaliesInfo(year){
   };
 
 function printGoalieStandings(goalies){
-    console.log(goalies);
     goalies.forEach(goalie => {
         $('#statGoalie').attr('class', 'row stat-info')
         .append($('<div>').attr('class','col-5 bold left').text(goalie.name)
@@ -67,7 +52,6 @@ function getPlayersInfo(year){
   };
 
 function printPlayerStandings(players){
-    console.log(players);
     players.forEach(player => {
         $('#statPlayer').attr('class', 'row stat-info')
         .append($('<div>').attr('class','col-4 bold left').text(player.name)
