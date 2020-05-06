@@ -14,10 +14,20 @@ function getTeamName(year, i){
 }
 
 function printTeamName(team, i){
-    console.log("NAME Team ",i);
-    console.log(team[0].name);
+    $('#name-team'+i).attr('class',' row stat-title '+team[0].name).html(team[0].name);
+    printTeamHeaders(i);
 }
 
+//TEAM HEADERS
+function printTeamHeaders (i){
+    $('#headers-team'+i).attr('class','row teams-subtitle')
+        .append($('<div>').attr('class','col-2').text('NUM')
+        .add($('<div>').attr('class','col-4 left').text('NAME'))
+        .add($('<div>').attr('class','col-3 left').text('POSITION'))
+        .add($('<div>').attr('class','col-1').text('G'))
+        .add($('<div>').attr('class','col-1').text('A'))
+        .add($('<div>').attr('class','col-1').text('PTS')));
+}
 
 //GET TEAM INFO
 function getTeamInfo(year,i){
@@ -29,6 +39,19 @@ function getTeamInfo(year,i){
 }
 
 function printTeamInfo(team, i){
-    console.log("Players for Team ",i)
-    console.log(team)
+    team.forEach(player => {
+        $('#players-team'+i).attr('class', 'team-players').append(printEachPlayer(player));
+    });
+}
+
+//.attr('class', 'row stat-info').append(printEachPlayer(player));
+
+function printEachPlayer(player){
+    return $('<div>').attr('class','row stat-info').attr('id', player.id).append(
+    $('<div>').attr('class','col-2').text(player.num)
+    .add($('<div>').attr('class','col-4 bold left').text(player.name))
+    .add($('<div>').attr('class','col-3 left').text(player.pos))
+    .add($('<div>').attr('class','col-1').text(player.goals))
+    .add($('<div>').attr('class','col-1').text(player.assists))
+    .add($('<div>').attr('class','col-1').text(player.points)));
 }

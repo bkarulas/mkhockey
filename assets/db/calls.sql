@@ -1,5 +1,7 @@
 use mkhockey;
 
+DROP TABLE summer_19_schedule ;
+
 /*---- STATS - GET TEAMS ----*/
 SELECT * FROM summer_19_team ORDER BY points desc, pm desc, gf desc, win desc, id;
 
@@ -16,9 +18,9 @@ LEFT JOIN positions ON summer_19_player.pos_id = positions.id
 ORDER BY summer_19_player.points desc, goals desc, summer_19_player.pos_id, summer_19_player.last_name, summer_19_player.first_name, summer_19_player.num, summer_19_player.id;
 
 /*---- TEAM - GET TEAM ----*/
-SELECT CONCAT(first_name,' ',last_name) AS name, positions.pos, num, goals, assists, points FROM summer_19_player
+SELECT summer_19_player.id, CONCAT(first_name,' ',last_name) AS name, positions.pos, num, goals, assists, points FROM summer_19_player
 LEFT JOIN positions ON summer_19_player.pos_id = positions.id
-WHERE team_id = 4
+WHERE team_id = 4 && summer_19_player.pos_id > 1
 ORDER BY pos_id, last_name, first_name, summer_19_player.id;
 
 /*---- PLAYER - GET PLAYER ----*/
@@ -32,3 +34,11 @@ WHERE summer_19_player.id = 44;
 UPDATE summer_19_player set points=1 WHERE id=44;
 
 SELECT * FROM positions;
+
+/*---- SCHEDULE ----*/
+SELECT * FROM summer_19_schedule;
+
+SELECT type, week, date, time, summer_19_team.name as home, summer_19_team.name as vis, home_score, vis_score FROM summer_19_schedule
+LEFT JOIN summer_19_team on summer_19_schedule.home_id = summer_19_team.id
+LEFT JOIN summer_19_team on summer_19_schedule.vis_id = summer_19_team.id
+ORDER BY week, time;

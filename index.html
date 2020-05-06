@@ -19,7 +19,7 @@
                 <a href="#home">HOME</a>
                 <a href="#teams">TEAMS</a>
                 <a href="#schedule">SCHEDULE</a>
-                <a href="#Stats">STATS</a>
+                <a href="#stats">STATS</a>
                 <a href="javascript:void(0);" style="font-size:15px;" class="icon" id="myMenuFunction">&#9776;</a>
             </div>
         </nav>
@@ -32,6 +32,44 @@
         <section id="home">
             <h1>Welcome to the Macedonian Hockey League</h1>
             <div id="info"></div>
+        </section>
+
+        <section id='teams' class='main-section'>
+
+            <div id='name-team1'></div>
+            <div id='headers-team1'></div>
+            <div id='players-team1'></div>
+            <hr>
+            <div id='name-team2'></div>
+            <div id='headers-team2'></div>
+            <div id='players-team2'></div>
+            <hr>
+            <div id='name-team3'></div>
+            <div id='headers-team3'></div>
+            <div id='players-team3'></div>
+            <hr>
+            <div id='name-team4'></div>
+            <div id='headers-team4'></div>
+            <div id='players-team4'></div>
+        </section>
+
+        <section id='schedule' class='main-section'>
+            <div class='row stat-title'>Schedule</div>
+            <div id="schedule-title" class='row stat-subtitle'>
+                <div class='col-2'>Date</div>
+                <div class='col-10'>
+                    <div class="row">
+                        <div class='col-3'>Time</div>
+                        <div class='col-3 right'>Home</div>
+                        <div class='col-1 offset-1'>vs</div>
+                        <div class='col-3 offset-1 left'>Visitors</div>
+                    </div>
+                </div>
+            </div>
+            <div class='row bottom teams-subtitle'>REGULAR SEASON</div>
+            <div id="schedule-reg"></div>
+            <div class='row bottom teams-subtitle'>PLAYOFFS</div>
+            <div id="schedule-offs"></div>
         </section>
 
         <section id='stats' class='main-section'>
@@ -85,6 +123,7 @@
         <script src="assets/js/script.js"></script>
         <script src="assets/js/nav.js"></script>
         <script src="assets/js/teams.js"></script>
+        <script src="assets/js/schedule.js"></script>
         <script src="assets/js/stats.js"></script>
     </body>
 </html>

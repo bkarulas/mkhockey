@@ -30,6 +30,9 @@ switch ($api) {
         $team = $_GET['team'];
         getTeamName($conn,$info, $year, $team);
     break;
+    case 'schedule':
+        getSchedule($conn,$info,$year);
+    break;
     default:
         echo "Error API";
 }
@@ -106,15 +109,16 @@ function getGoaliesInfo($conn,$info, $year){
 
 //TEAM INFO
 function getTeamInfo($conn,$info, $year, $team){
-    $query = "SELECT CONCAT(first_name,' ',last_name) AS name, positions.pos, num, goals, assists, points FROM summer_".$year."_player
+    $query = "SELECT summer_".$year."_player.id, CONCAT(first_name,' ',last_name) AS name, positions.pos, num, goals, assists, points FROM summer_".$year."_player
     LEFT JOIN positions ON summer_".$year."_player.pos_id = positions.id
-    WHERE team_id = $team
+    WHERE team_id = $team && summer_".$year."_player.pos_id > 1
     ORDER BY pos_id, last_name, first_name, summer_".$year."_player.id";
     $result = mysqli_query($conn, $query);
 
     while ($row = $result->fetch_assoc()) {
         array_push($info,
             array(
+                "id"=>$row['id'],
                 "name"=>$row['name'],
                 "pos"=>$row['pos'],
                 "num"=>$row['num'],
@@ -159,6 +163,30 @@ function getTeamName($conn,$info, $year, $team){
         array_push($info,
             array(
                 "name"=>$row['name'],
+            ));
+    }
+    echo json_encode($info);
+    CloseCon($conn);
+}
+
+function getSchedule($conn,$info,$year){
+    $query = "SELECT type, week, date, time, home_id, home_name as home, vis_id, vis_name as vis, home_score, vis_score, note FROM summer_19_schedule ORDER BY week, time";
+    $result = mysqli_query($conn, $query);
+
+    while ($row = $result->fetch_assoc()) {
+        array_push($info,
+            array(
+                "type"=>$row['type'],
+                "week"=>$row['week'],
+                "date"=>$row['date'],
+                "time"=>$row['time'],
+                "home_id"=>$row['home_id'],
+                "home"=>$row['home'],
+                "vis_id"=>$row['vis_id'],
+                "vis"=>$row['vis'],
+                "home_score"=>$row['home_score'],
+                "vis_score"=>$row['vis_score'],
+                "note"=>$row['note'],
             ));
     }
     echo json_encode($info);
