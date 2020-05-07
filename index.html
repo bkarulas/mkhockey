@@ -12,14 +12,15 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/nav.css" />
         <script  src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
     </head>
     <body>
         <nav class="topnav" id="myTopnav">
             <div>
-                <a href="#home">HOME</a>
-                <a href="#teams">TEAMS</a>
-                <a href="#schedule">SCHEDULE</a>
-                <a href="#stats">STATS</a>
+                <a href="#" onclick="menuClick('Home')">HOME</a>
+                <a href="#" onclick="menuClick('Teams')">TEAMS</a>
+                <a href="#" onclick="menuClick('Schedule')">SCHEDULE</a>
+                <a href="#" onclick="menuClick('Stats')">STATS</a>
                 <a href="javascript:void(0);" style="font-size:15px;" class="icon" id="myMenuFunction">&#9776;</a>
             </div>
         </nav>
@@ -29,28 +30,45 @@
             </div>
         </div>
         
-        <section id="home">
+        <section id="home" class='main-section'>
             <h1>Welcome to the Macedonian Hockey League</h1>
-            <div id="info"></div>
+            <div id="home-info"></div>
+            <hr>
+            <div class='row' id='champs'>
+                <div id="champ-title"></div>
+                <div id="champ-subtitle"></div>
+                <div id="champ-pic"></div>
+                <div id="champ-name"></div>
+            </div>
         </section>
 
-        <section id='teams' class='main-section'>
-
-            <div id='name-team1'></div>
-            <div id='headers-team1'></div>
-            <div id='players-team1'></div>
-            <hr>
-            <div id='name-team2'></div>
-            <div id='headers-team2'></div>
-            <div id='players-team2'></div>
-            <hr>
-            <div id='name-team3'></div>
-            <div id='headers-team3'></div>
-            <div id='players-team3'></div>
-            <hr>
-            <div id='name-team4'></div>
-            <div id='headers-team4'></div>
-            <div id='players-team4'></div>
+        <section id='teams'>
+            <div class='each-team main-section'>
+                <div id='name-team1'></div>
+                <div id='headers-team1'></div>
+                <div id='players-team1'></div>
+            </div>
+            <div class='each-team main-section'>
+                <div id='name-team2'></div>
+                <div class="team-border">
+                    <div id='headers-team2'></div>
+                    <div id='players-team2'></div>
+                </div>
+            </div>
+            <div class='each-team main-section'>
+                <div id='name-team3'></div>
+                <div class="team-border">
+                    <div id='headers-team3'></div>
+                    <div id='players-team3'></div>
+                </div>
+            </div>
+            <div class='each-team main-section'>
+                <div id='name-team4'></div>
+                <div class="team-border">
+                    <div id='headers-team4'></div>
+                    <div id='players-team4'></div>
+                </div>
+            </div>
         </section>
 
         <section id='schedule' class='main-section'>
@@ -66,10 +84,12 @@
                     </div>
                 </div>
             </div>
-            <div class='row bottom teams-subtitle'>REGULAR SEASON</div>
-            <div id="schedule-reg"></div>
-            <div class='row bottom teams-subtitle'>PLAYOFFS</div>
-            <div id="schedule-offs"></div>
+            <div class="team-border">
+                <div class='row bottom teams-subtitle'>REGULAR SEASON</div>
+                <div id="schedule-reg"></div>
+                <div class='row bottom teams-subtitle'>PLAYOFFS</div>
+                <div id="schedule-offs"></div>
+            </div>
         </section>
 
         <section id='stats' class='main-section'>
@@ -87,7 +107,9 @@
                     <span class='col-1'>GA</span>
                     <span class='col-1'>+/-</span>
                 </div>
-                <div id='statTeam'></div>
+                <div class="team-border">
+                    <div id='statTeam'></div>
+                </div>
             </div>
             <hr>
             <!--GOALIE-->
@@ -101,7 +123,9 @@
                     <span class='col-2'>GAA</span>
                     <span class='col-1'>SO</span>
                 </div>
-                <div id='statGoalie'></div>
+                <div class="team-border">
+                    <div id='statGoalie'></div>
+                </div>
             </div>
             <hr>
             <!--PLAYER-->
@@ -116,12 +140,19 @@
                     <span class='col-1'>A</span>
                     <span class='col-1'>PTS</span>
                 </div>
-                <div id='statPlayer'></div>
+                <div class="team-border">
+                    <div id='statPlayer'></div>
+                </div>
             </div>
+        </section>
 
+        <section id='footer'>
+            <div id='footer-info'></div>
         </section>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/nav.js"></script>
+        <script src="assets/js/champs.js"></script>
+        <script src="assets/js/home.js"></script>
         <script src="assets/js/teams.js"></script>
         <script src="assets/js/schedule.js"></script>
         <script src="assets/js/stats.js"></script>

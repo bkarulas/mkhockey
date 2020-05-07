@@ -7,7 +7,6 @@ function getSchedule(year){
 }
 
 function printSchedule(info){
-    console.log(info);
     for (let i=0; i<info.length; i++){
         let p= i-1
         if ((info[i].type == 1) || ((info[i].type == 0) && (info[i-1].type == 1))){

@@ -38,7 +38,8 @@ SELECT * FROM positions;
 /*---- SCHEDULE ----*/
 SELECT * FROM summer_19_schedule;
 
-SELECT type, week, date, time, summer_19_team.name as home, summer_19_team.name as vis, home_score, vis_score FROM summer_19_schedule
-LEFT JOIN summer_19_team on summer_19_schedule.home_id = summer_19_team.id
-LEFT JOIN summer_19_team on summer_19_schedule.vis_id = summer_19_team.id
+SELECT type, week, date, time, home_id, home_name as home, vis_id, vis_name as vis, home_score, vis_score, note FROM summer_19_schedule
 ORDER BY week, time;
+
+/*---- CHAMPS ----*/
+SELECT CONCAT(first_name,' ',last_name) AS name FROM summer_19_player WHERE team_id = 4 ORDER BY last_name, first_name;

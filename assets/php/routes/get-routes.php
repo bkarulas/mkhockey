@@ -33,6 +33,10 @@ switch ($api) {
     case 'schedule':
         getSchedule($conn,$info,$year);
     break;
+    case 'champs':
+        $team = $_GET['team'];
+        getChampsNames($conn,$info, $year, $team);
+    break;
     default:
         echo "Error API";
 }
@@ -193,4 +197,17 @@ function getSchedule($conn,$info,$year){
     CloseCon($conn);
 }
 
+
+function getChampsNames($conn,$info, $year, $team){
+    $infoStr = '';
+    $query = "SELECT CONCAT(first_name,' ',last_name) AS name FROM summer_".$year."_player 
+    WHERE team_id = ".$team." ORDER BY last_name, first_name";
+    $result = mysqli_query($conn, $query);
+
+    while ($row = $result->fetch_assoc()) {
+        $infoStr= $infoStr.$row['name'].", ";
+    }
+    echo $infoStr;
+    CloseCon($conn);
+}
 ?>
