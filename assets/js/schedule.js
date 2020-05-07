@@ -1,3 +1,5 @@
+$('#schedule-title').attr('class','row stat-title').html(`20${year} SCHEDULE`)
+
 function getSchedule(year){
     phpurl = geturl+"schedule&year="+year;
     $.ajax({url: phpurl, method: "GET"})

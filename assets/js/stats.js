@@ -1,3 +1,5 @@
+$('#stats-title').attr('class','row stat-title').html(`20${year} STATS`)
+
 //GET TEAM INFO
 function getTeamsInfo(year){
     phpurl = geturl+"teams&year="+year;

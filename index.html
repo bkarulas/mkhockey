@@ -9,6 +9,7 @@
         <title>MK Hockey League</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>-->
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="stylesheet" href="assets/css/nav.css" />
         <script  src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -42,27 +43,30 @@
             </div>
         </section>
 
-        <section id='teams'>
-            <div class='each-team main-section'>
+        <section id='teams' class='main-section'>
+            <div id='teams-title'></div>
+            <div class='each-team'>
                 <div id='name-team1'></div>
-                <div id='headers-team1'></div>
-                <div id='players-team1'></div>
+                <div class="team-border">
+                    <div id='headers-team1'></div>
+                    <div id='players-team1'></div>
+                </div>
             </div>
-            <div class='each-team main-section'>
+            <div class='each-team'>
                 <div id='name-team2'></div>
                 <div class="team-border">
                     <div id='headers-team2'></div>
                     <div id='players-team2'></div>
                 </div>
             </div>
-            <div class='each-team main-section'>
+            <div class='each-team'>
                 <div id='name-team3'></div>
                 <div class="team-border">
                     <div id='headers-team3'></div>
                     <div id='players-team3'></div>
                 </div>
             </div>
-            <div class='each-team main-section'>
+            <div class='each-team'>
                 <div id='name-team4'></div>
                 <div class="team-border">
                     <div id='headers-team4'></div>
@@ -72,8 +76,8 @@
         </section>
 
         <section id='schedule' class='main-section'>
-            <div class='row stat-title'>Schedule</div>
-            <div id="schedule-title" class='row stat-subtitle'>
+            <div id='schedule-title'></div>
+            <div class='row stat-subtitle'>
                 <div class='col-2'>Date</div>
                 <div class='col-10'>
                     <div class="row">
@@ -93,10 +97,10 @@
         </section>
 
         <section id='stats' class='main-section'>
-
+            <div id='stats-title'></div>
             <!--TEAM-->
             <div id="team-standings">
-                <div class='row stat-title'>Teams Standings</div>
+                <div class='row stat-title'>TEAMS</div>
                 <div class='row stat-subtitle'>
                     <span class='col-4 left'>TEAM</span>
                     <span class='col-1'>W</span>
@@ -114,7 +118,7 @@
             <hr>
             <!--GOALIE-->
             <div id="goalie-standings">
-                <div class='row stat-title'>Goalies Standings</div>
+                <div class='row stat-title'>GOALIES</div>
                 <div class='row stat-subtitle'>
                     <span class='col-5 left'>NAME</span>
                     <span class='col-2'>TEAM</span>
@@ -130,7 +134,7 @@
             <hr>
             <!--PLAYER-->
             <div id="team-standings">
-                <div class='row stat-title'>Players Standings</div>
+                <div class='row stat-title'>PLAYERS</div>
                 <div class='row stat-subtitle'>
                     <span class='col-4 left'>NAME</span>
                     <span class='col-2'>POS</span>

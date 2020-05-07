@@ -56,7 +56,4 @@
         );
     };
 
-
-    // Set initial active state
-
 })();

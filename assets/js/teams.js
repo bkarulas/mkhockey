@@ -1,3 +1,5 @@
+$('#teams-title').attr('class','row stat-title').html(`20${year} TEAMS`)
+
 function getAllTeams(year){
     for (let i=1; i<=totalTeams; i++){
         getTeamName(year, i);
@@ -14,7 +16,7 @@ function getTeamName(year, i){
 }
 
 function printTeamName(team, i){
-    $('#name-team'+i).attr('class',' row stat-title '+team[0].name).html(team[0].name);
+    $('#name-team'+i).attr('class',' row stat-title '+team[0].name).html(team[0].name.toUpperCase());
     printTeamHeaders(i);
 }
 

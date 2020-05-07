@@ -6,12 +6,14 @@ const secHome = document.getElementById("home")
 const secTeams = document.getElementById("teams");
 const secSchedule = document.getElementById("schedule");
 const secStats = document.getElementById("stats");
+let currentYear = moment().format("YY");
+let yearsPlayed = (currentYear-8);
+let champYear = (currentYear-1)
 
 //TEMP FOR TESTING
 let year = 19;
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Ready', year);
   getAllTeams(year);
   getSchedule(year);
   getTeamsInfo(year);
