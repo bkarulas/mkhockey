@@ -29,6 +29,8 @@ LEFT JOIN positions ON summer_19_player.pos_id = positions.id
 LEFT JOIN summer_19_team on summer_19_player.team_id = summer_19_team.id
 WHERE summer_19_player.id = 44;
 
+select * from positions;
+
 
 /*---- REF: UPDATE SINGLE LINE ----*/
 UPDATE summer_19_player set points=1 WHERE id=44;

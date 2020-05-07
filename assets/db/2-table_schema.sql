@@ -37,16 +37,32 @@ CREATE TABLE `summer_19_goalie` (
 
 CREATE TABLE `summer_19_schedule` (
   `id` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `type` int,
-  `week` int DEFAULT 0,
+  `type` int DEFAULT null,
+  `week` int DEFAULT null,
   `date` varchar(255),
-  `time` int DEFAULT 0,
+  `time` int DEFAULT null,
   `home_id` int DEFAULT null,
+  `home_name` varchar(255) DEFAULT null,
   `vis_id` int DEFAULT null,
-  `home_score` int DEFAULT 0,
-  `vis_score` int DEFAULT 0,
+  `vis_name` varchar(255) DEFAULT null,
+  `home_score` int DEFAULT null,
+  `vis_score` int DEFAULT null,
+  `note` varchar(255) DEFAULT null,
   `updated` datetime
 );
+
+CREATE TABLE `positions` (
+  `id` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `pos` varchar(255) NOT NULL
+);
+
+INSERT INTO positions (pos) VALUES
+('Goalie'),
+('Defense'),
+('Def/For'),
+('Forward');
+
+INSERT INTO summer_19_schedule (type, week, date, time, home_id, vis_id, home_score, vis_score, updated) VALUES
 
 
 ALTER TABLE `summer_19_player` ADD FOREIGN KEY (`team_id`) REFERENCES `summer_19_team` (`id`);

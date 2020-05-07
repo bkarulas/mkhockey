@@ -4,8 +4,6 @@ INSERT INTO summer_19_team (name, win, lose, tie, points, gf, ga, pm, updated) V
 ('Ohrid', 5, 10, 0, 10, 65, 75, -10, current_timestamp), 
 ('Solun', 5, 9, 1, 11, 65, 75, -10, current_timestamp);
 
-INSERT INTO summer_19_team (id, name) VALUES 
-(0, 'Blank');
 
 INSERT INTO summer_19_player (id, first_name, last_name, team_id, num, pos_id, goals, assists, points, updated) VALUES
 (1, 'Dana', 'Burke', 1, 1, 1, 0, 0, 0, current_timestamp),
@@ -63,59 +61,58 @@ INSERT INTO summer_19_goalie (player_id, team_id, gp, ga, gaa, so, updated) VALU
 (25, 3, 15, 75, 5.00, 0, current_timestamp), 
 (37, 4, 13, 82, 6.31, 0, current_timestamp);
 
-INSERT INTO summer_19_schedule (type, week, date, game, home_id, vis_id, home_score, vis_score, updated) VALUES
+INSERT INTO summer_19_schedule (type, week, date, time, home_id, vis_id, home_score, vis_score, updated) VALUES
 (1,1,'Apr 24',8,2,1,3,5,current_timestamp),
 (1,1,'Apr 24',9,4,3,2,7,current_timestamp),
 (1,2,'May 1',8,1,4,11,2,current_timestamp),
-(1,2,'May 1',9,2,3,4,8,current_timestamp);
-
-INSERT INTO summer_19_schedule (type, week, date, game, home_id, vis_id, home_score, vis_score, updated) VALUES
+(1,2,'May 1',9,2,3,4,8,current_timestamp),
 (0,3,'May 8',8,null,null,null,null,current_timestamp),
-(0,3,'May 8',9,null,null,null,null,current_timestamp);
+(0,3,'May 8',9,null,null,null,null,current_timestamp),
+(1,4,'May 15',8,3,1,3,2,current_timestamp),
+(1,4,'May 15',9,2,4,6,3,current_timestamp),
+(1,5,'May 22',8,2,1,7,4,current_timestamp),
+(1,5,'May 22',9,3,4,7,10,current_timestamp),
+(1,6,'May 29',8,4,1,5,3,current_timestamp),
+(1,6,'May 29',9,3,2,0,6,current_timestamp),
+(1,7,'June 5',8,1,3,5,4,current_timestamp),
+(1,7,'June 5',9,2,4,1,9,current_timestamp),
+(1,8,'June 12',8,3,4,4,7,current_timestamp),
+(1,8,'June 12',9,1,2,3,3,current_timestamp),
+(1,9,'June 19',8,2,3,3,8,current_timestamp),
+(1,9,'June 19',9,4,1,1,7,current_timestamp),
+(1,10,'June 26',8,4,2,8,8,current_timestamp),
+(1,10,'June 26',9,1,3,5,3,current_timestamp),
+(1,11,'July 3',8,1,2,3,1,current_timestamp),
+(1,11,'July 3',9,3,4,5,7,current_timestamp),
+(1,12,'July 10',8,4,1,1,7,current_timestamp),
+(1,12,'July 10',9,3,2,3,4,current_timestamp),
+(1,13,'July 17',8,1,3,5,1,current_timestamp),
+(1,13,'July 17',9,4,2,4,5,current_timestamp),
+(1,14,'July 24',8,4,3,6,7,current_timestamp),
+(1,14,'July 24',9,2,1,2,7,current_timestamp),
+(1,15,'July 31',8,3,2,3,6,current_timestamp),
+(1,15,'July 31',9,4,1,5,8,current_timestamp),
+(1,16,'Aug 7',8,2,4,7,6,current_timestamp),
+(1,16,'Aug 7',9,1,3,3,2,current_timestamp),
+(2,17,'Aug 14',8,4,2,4,1,current_timestamp),
+(2,17,'Aug 14',9,3,1,1,4,current_timestamp),
+(0,18,'Aug 21',8,null,null,null,null,current_timestamp),
+(0,18,'Aug 21',9,null,null,null,null,current_timestamp),
+(2,19,'Aug 28',8,1,3,2,2,current_timestamp),
+(2,19,'Aug 28',9,2,4,3,2,current_timestamp),
+(2,20,'Sept 4',8,2,3,4,6,current_timestamp),
+(2,20,'Sept 4',9,1,4,5,7,current_timestamp);
 
-INSERT INTO summer_19_schedule (week, date, game, home_id, vis_id, home_score, vis_score, updated) VALUES
-(1,1,'May 15',8,3,1,3,2,current_timestamp),
-(1,1,'May 15',9,2,4,6,3,current_timestamp),
-(1,2,'May 22',8,2,1,7,4,current_timestamp),
-(1,2,'May 22',9,3,4,7,10,current_timestamp),
-(1,'May 29',8,4,1,5,3,current_timestamp),
-(1,'May 29',9,3,2,0,6,current_timestamp),
-(1,'June 5',8,1,3,5,4,current_timestamp),
-(1,'June 5',9,2,4,1,9,current_timestamp),
-(1,'June 12',8,3,4,4,7,current_timestamp),
-(1,'June 12',9,1,2,3,3,current_timestamp),
-(1,'June 19',8,2,3,3,8,current_timestamp),
-(1,'June 19',9,4,1,1,7,current_timestamp),
-(1,'June 26',8,4,2,8,8,current_timestamp),
-(1,'June 26',9,1,3,5,3,current_timestamp),
-(1,'July 3',8,1,2,3,1,current_timestamp),
-(1,'July 3',9,3,4,5,7,current_timestamp),
-(1,'July 10',8,4,1,1,7,current_timestamp),
-(1,'July 10',9,3,2,3,4,current_timestamp),
-(1,'July 17',8,1,3,5,1,current_timestamp),
-(1,'July 17',9,4,2,4,5,current_timestamp),
-(1,'July 24',8,4,3,6,7,current_timestamp),
-(1,'July 24',9,2,1,2,7,current_timestamp),
-(1,'July 31',8,3,2,3,6,current_timestamp),
-(1,'July 31',9,4,1,5,8,current_timestamp),
-(1,'Aug 7',8,2,4,7,6,current_timestamp),
-(1,'Aug 7',9,1,3,3,2,current_timestamp),
-(2,'Aug 14',8,4,2,4,1,current_timestamp),
-(2,'Aug 14',9,3,1,1,4,current_timestamp);
+UPDATE summer_19_schedule set home_name='Bitola' WHERE home_id=1;
+UPDATE summer_19_schedule set vis_name='Bitola' WHERE vis_id=1;
+UPDATE summer_19_schedule set home_name='Lerin' WHERE home_id=2;
+UPDATE summer_19_schedule set vis_name='Lerin' WHERE vis_id=2;
+UPDATE summer_19_schedule set home_name='Ohrid' WHERE home_id=3;
+UPDATE summer_19_schedule set vis_name='Ohrid' WHERE vis_id=3;
+UPDATE summer_19_schedule set home_name='Solun' WHERE home_id=4;
+UPDATE summer_19_schedule set vis_name='Solun' WHERE vis_id=4;
+UPDATE summer_19_schedule set note='NO GAMES' WHERE type=0;
 
-INSERT INTO summer_19_schedule (week, date, game, updated) VALUES
-(3,'Aug 21',8,current_timestamp),
-(3,'Aug 21',9,current_timestamp);
-
-INSERT INTO summer_19_schedule (week, date, game, home_id, vis_id, home_score, vis_score, updated) VALUES
-(2,'Aug 28',8,1,3,2,2,current_timestamp),
-(2,'Aug 28',9,2,4,3,2,current_timestamp),
-(2,'Sept 4',8,2,3,4,6,current_timestamp),
-(2,'Sept 4',9,1,4,5,7,current_timestamp);
-
-SELECT * FROM summer_19_schedule;
-
-SELECT * FROM summer_19_team;
 
 
 
