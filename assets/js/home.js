@@ -13,4 +13,7 @@ $('#champ-pic').attr('class', 'row').append($('<img>').attr('class','img-fluid')
 
 $('#footer-info').attr("class", "row").html(`MK Hockey League 20${currentYear} &copy;`);
 
+//UPDATE
+
+
 

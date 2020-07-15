@@ -29,7 +29,7 @@ function printWeekGames(info, i){
         return ($('<div>').attr('class','row nogame').append(
             $('<div>').attr('class','col-9 offset-3').text("NO GAMES")))
             .add($('<div>').attr('class','row nogame').append(
-                $('<div>').attr('class','col-9 offset-3').text("BY WEEK")));
+                $('<div>').attr('class','col-9 offset-3').text("BYE WEEK")));
     } else {
         return ($('<div>').attr('class','row game8 bottom').append(
             $('<div>').attr('class','col-3').text(info[t1].time+":00")
